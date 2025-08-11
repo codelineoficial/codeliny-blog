@@ -1,10 +1,12 @@
+// Controller para salvar dados do formulário de contato no MongoDB via Prisma
 import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 export async function createContato(req, res) {
   try {
+    const { name, email, phone, company, service, budget, message } = req.body;
     const contato = await prisma.contato.create({
-      data: req.body
+      data: { name, email, phone, company, service, budget, message }
     });
     res.status(201).json(contato);
   } catch (error) {
