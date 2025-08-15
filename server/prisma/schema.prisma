@@ -43,3 +43,20 @@ model Newsletter {
 	email     String   @unique
 	createdAt DateTime @default(now())
 }
+
+model QuoteRequest {
+  id             String   @id @default(auto()) @map("_id") @db.ObjectId
+  service        String
+  budget         String?
+  timeline       String?
+  companySize    String?
+  currentWebsite String?
+  goals          String?
+  challenges     String?
+  name           String
+  email          String
+  phone          String?
+  company        String?
+  additionalInfo String?
+  createdAt      DateTime @default(now())
+}

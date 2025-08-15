@@ -6,6 +6,7 @@ import setupSocket from './socket.js';
 import postRoutes from './post.routes.js';
 import contatoRoutes from './contato.routes.js';
 import newsletterRoutes from './newsletter.routes.js';
+import quoteRoutes from './quote.routes.js';
 import { PrismaClient } from '@prisma/client';
 
 const app = express();
@@ -23,6 +24,7 @@ app.use((req, res, next) => {
 app.use('/api/posts', postRoutes);
 app.use('/api/contato', contatoRoutes);
 app.use('/api/newsletter', newsletterRoutes);
+app.use('/api/quote', quoteRoutes);
 
 setupSocket(server);
 
